@@ -47,7 +47,8 @@ class UserHome extends Component {
 
             <ShowList 
               getShow = { this.props.getShow } 
-              getMovie = {this.props.getMovie }
+              getMovie = { this.props.getMovie }
+              isTVShow = { this.state.isTVShow }
               showList = { this.props.showList }
               addedShowEpisodes = { this.state.addedShowEpisodes }
               showName = { this.props.showName }
@@ -64,6 +65,14 @@ class UserHome extends Component {
               changeView = { this.props.changeView }
               getPostAddShowData = { this.props.getPostAddShowData }
             />
+            : this.state.showSelected === 'true' ?
+              <AddMovie
+                movieId = { this.props.showId } 
+                movieName = { this.props.showName }
+                username = { this.props.username }
+                changeView = { this.props.changeView }
+                getPostAddShowData = { this.props.getPostAddShowData }
+              />
             : null}
             </div>
             </Container>
